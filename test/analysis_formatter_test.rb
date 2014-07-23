@@ -4,8 +4,8 @@ class AnalysisFormatterTest < Test::Unit::TestCase
 
   attr_reader :sut
   def setup
-    comment_formatter = CommentTable.new({'result_type' => {'feedback_type' => ['foo'], 'multiple' => ['bar', 'baz']}})
-    @sut = AnalysisFormatter.new(comment_formatter)
+    comment_formatter = Exercism::AnalysisApi::CommentTable.new({'result_type' => {'feedback_type' => ['foo'], 'multiple' => ['bar', 'baz']}})
+    @sut = Exercism::AnalysisApi::AnalysisFormatter.new(comment_formatter)
   end
 
   def test_returns_comment_for_each_feedback

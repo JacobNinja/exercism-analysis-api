@@ -4,7 +4,7 @@ class CommentFormatterTest < Test::Unit::TestCase
 
   attr_reader :sut
   def setup
-    @sut = CommentTable.new({'result_type' => {'feedback_type' => ['comment']}})
+    @sut = Exercism::AnalysisApi::CommentTable.new({'result_type' => {'feedback_type' => ['comment']}})
   end
 
   def test_returns_matching_entries

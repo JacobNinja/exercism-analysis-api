@@ -1,15 +1,21 @@
-class AnalysisFormatter
+class Exercism
+  module AnalysisApi
 
-  def initialize(comment_formatter)
-    @comment_formatter = comment_formatter
-  end
+    class AnalysisFormatter
 
-  def format(results)
-    results.flat_map do |result|
-      result.feedback.map do |feedback|
-        @comment_formatter.lookup(result.type, feedback.type).sample
-      end.compact
+      def initialize(comment_formatter)
+        @comment_formatter = comment_formatter
+      end
+
+      def format(results)
+        results.flat_map do |result|
+          result.feedback.map do |feedback|
+            @comment_formatter.lookup(result.type, feedback.type).sample
+          end.compact
+        end
+      end
+
     end
-  end
 
+  end
 end
