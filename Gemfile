@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'sinatra'
 gem 'sidekiq'
 
 gem 'codeminer', github: 'JacobNinja/codeminer'
