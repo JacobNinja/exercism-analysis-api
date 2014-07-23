@@ -25,7 +25,9 @@ class Exercism
       end
 
       def analyzers
-        {'ruby' => AnalyzerConfig.new(Exercism::Adapters::Ruby, [Exercism::Analyzers::ForLoop])}
+        {'ruby' => AnalyzerConfig.new(Exercism::Adapters::Ruby, [Exercism::Analyzers::ControlFlow,
+                                                                 Exercism::Analyzers::Indentation,
+                                                                 Exercism::Analyzers::ForLoop,])}
       end
 
     end

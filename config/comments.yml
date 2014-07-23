@@ -1,3 +1,15 @@
 for_loop:
   for_loop:
     - "Rubyists tend to prefer enumerable methods over for loops. The most basic choice is Enumerable#each, but there are many others that you might want to choose, depending on what you're trying to do. Check out http://ruby-doc.org/core-2.1.2/Enumerable.html) to see what's available."
+indentation:
+  two_spaces:
+    - "Rubyists have settled on using exactly two spaces for indentation—not tabs, and not four spaces. This is one of the places where individual style will work against you. If your spacing doesn't match the Ruby norm, the code will look subtly wrong at first glance, even if it is perfectly fine."
+  inconsistent_spacing:
+    - "The indentation is inconsistent which makes it harder to read and understand the code. Human brains are incredible at detecting patterns, and tend to home right in on the places where patterns break down. This can be very useful: inconsistency will draw the eye, often alerting you to a subtle problem like a bug or a syntax error. It can be worth enforcing consistency (making like things alike, and unlike things different) in order to enable that powerful pattern matching."
+control_flow:
+  and: &default
+    - "In Ruby and has similar behavior to &&, but they mean very different things. &&, ||, and ! are logical operators. These are meant to combine multiple boolean (true/false) statements into one single true or false, for example hungry? && thirsty? || cranky?. The more English-y operators, and, or, and not are control flow operators. These get strung together when you need to decide whether or not to perform an operation based on whether or not a previous operation failed or succeeded, for example sleep or drink_coffee (only drink coffee if you're sleep deprived), or deploy and celebrate (you only get to celebrate if the deploy succeeded)."
+  or:
+    *default
+  not:
+    *default
