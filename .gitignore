@@ -1,2 +1,6 @@
 /.idea
 .ruby-gemset
+
+# config files
+
+/config/exercism-analysis-api.yml
