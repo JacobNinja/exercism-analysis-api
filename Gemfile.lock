@@ -1,0 +1,28 @@
+GIT
+  remote: git://github.com/JacobNinja/codeminer.git
+  revision: af15e437a04774c49eec2fce9b09839ecb9ec94e
+  specs:
+    codeminer (0.1.0)
+
+GIT
+  remote: git://github.com/JacobNinja/exercism-analysis.git
+  revision: 3dd4b3e4338f5f9df7ecedac662028984de8b628
+  specs:
+    exercism-analysis (0.1.0)
+      roodi (~> 4.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    roodi (4.0.0)
+      ruby_parser (~> 3.2, >= 3.2.2)
+    ruby_parser (3.6.2)
+      sexp_processor (~> 4.1)
+    sexp_processor (4.4.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  codeminer!
+  exercism-analysis!
