@@ -5,14 +5,16 @@ class Exercism
 
       AnalyzerConfig = Struct.new(:adapter, :analyzers)
 
-      def self.from_yaml(config_file, comments_file)
+      def self.from_files(config_file, comments_path)
         config = YAML.load(File.read(config_file))
-        comments = YAML.load(File.read(comments_file))
-        new(config['submission_url'], comments)
+        comments = CommentReader.read(comments_path)
+        new(config['user_key'], comments)
       end
 
-      def initialize(submission_url, comments)
-        @submission_url = submission_url
+      attr_reader :user_key
+
+      def initialize(user_key, comments)
+        @user_key = user_key
         @comments = comments
       end
 

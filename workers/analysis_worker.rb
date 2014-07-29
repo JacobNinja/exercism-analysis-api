@@ -7,7 +7,7 @@ class AnalysisWorker
     with_config(language) do |adapter, analyzers|
       results = Exercism::Analysis.new(adapter.new(code)).run(*analyzers)
       comment = Exercism::AnalysisApi::AnalysisFormatter.new(config.comments_table).format(results.values.flatten)
-      user = ::User.last
+      user = ::User.find_by(key: config.user_key)
       Exercism::AnalysisApi::Submission.comment(key, user, comment.join("\n"))
     end
   end
